@@ -1,5 +1,51 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+
+  div.grid-container
+    div
+      ul.subcontainerMenu 
+        li.liMenu
+          img.logo(src="images/netflix-nouveau-logo.jpg")
+        li.liMenu  
+          h1 NETFLIX
+        each val in [{text:"HOME", link:`/`},{text:'A PROPOS', link:"/about"}, {text:'CONTACT', link: '/contact'},{text:'SIGN IN', link: '/sign_in'}]
+          li.liMenu 
+            a(href=val.link) #{val.text}
+         
+  div.subcontainerMain
+    .allArticles
+      mixin monFilmAMwa(titreTemplate)
+        main(role="main")
+          article.artclBorder.artcl
+            .header
+              a(href="#")
+                h2= titreTemplate
+              .categorie Drama
+            .main
+              img(src="images/logo-rotten-straberry.png")
+              .description
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eaque voluptatem voluptatum qui placeat quo.
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eaque voluptatem voluptatum qui placeat quo.
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eaque voluptatem voluptatum qui placeat quo.
+            .footer
+              .realisator Bob
+              ul.actors
+                each val in ["Bob", "Patrick", "Sandy"]
+                  li= val
+              .date 30 mars 2021
+
+      each val in ["Mon premier super film", "Mon deuxième super film", "Mon troisième super film"]
+        +monFilmAMwa(val)
+
+    .sidebar
+      div.ecranSearch Rechercher ici 
+        div.imageSearch 
+          img.searchIcon(src="/images/11-110727_search-loop-white-png-transparent-png")
+        div.categoriesSearch
+          ul.cateBorder 
+            each valCategs in [{text:"Action", link:`/action`},{text:'Animé', link:"/animé"}, {text:'Comédies', link: '/comédies',text:"Drames", link:`/drames`},{text:'Fantastique', link:"/fantastique"}, {text:'Comédies', link: '/comédies'}]
+              li 
+                a(href=valCategs.link) #{valCategs.text}
+  footer
+    p © 2021 / Max 
