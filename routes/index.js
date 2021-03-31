@@ -18,10 +18,9 @@ router.get('/', function (req, res, next) {
       res.render('index', { title: 'Express', infos: mesInfosArticles });
     });
   // on commnete le let mesInfosArticles =... après avoir créer un dossier infos_movies.json contenant le tableau contenu ds la variable mesInfosArticles
-  let mesInfosArticles = [{ titreTemplateInfo: "Mon premier super film", imageArtclInfo: "images/amon.jpg" }, { titreTemplateInfo: "Mon deuxième super film", imageArtclInfo: "images/viking.jpg" }, { titreTemplateInfo: "Mon troisième super film", imageArtclInfo: "images/gunjan.jpg" }];
+  // let mesInfosArticles = [{ titreTemplateInfo: "Mon premier super film", imageArtclInfo: "images/amon.jpg" }, { titreTemplateInfo: "Mon deuxième super film", imageArtclInfo: "images/viking.jpg" }, { titreTemplateInfo: "Mon troisième super film", imageArtclInfo: "images/gunjan.jpg" }];
   // toujours redemarer le serveur ctrl + C pour raffraichir les info coté serveur
   // infos: mesInfosArticles est la nouvelles variable qui est utilisé comme variable infos dans index.pug
-
 });
 
 module.exports = router;
