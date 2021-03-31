@@ -1,0 +1,14 @@
+[
+    {
+        "titreTemplateInfo": "Mon premier super film",
+        "imageArtclInfo": "images/amon.jpg"
+    },
+    {
+        "titreTemplateInfo": "Mon deuxième super film",
+        "imageArtclInfo": "images/viking.jpg"
+    },
+    {
+        "titreTemplateInfo": "Mon troisième super film",
+        "imageArtclInfo": "images/gunjan.jpg"
+    }
+]
