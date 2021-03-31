@@ -15,8 +15,12 @@ a
 //     list-style: none
 //     width: 100%
 
-li.case_vide
-  color: black
+// li.case_vide
+//   color: black
+
+.grid-container,.subcontainerMain
+  max-width: 1240px
+  margin: auto
 
 .artclBorder,.cateBorder
   border: solid 3px white
@@ -61,6 +65,60 @@ li.case_vide
   display: grid
   grid-template-columns: 3fr 1fr
 
-.allArticles, .sidebar
-  border-collapse: separate
-  border-spacing: 15px
+.allArticles,.artclContainer,.sidebar
+  padding: 10px
+
+.headerArtcl, .mainArtcl, .fouterArtcl
+  // display: grid
+  display: flex
+  grid-template-columns: 1fr 2fr
+
+  // ------------------------------------------
+
+// body 
+//   display: flex
+//   max-width: 1024px
+//   margin-left: auto
+//   margin-right: auto
+//   padding-top: 20px
+//   background-color: #F0F5FA
+.left 
+  flex: 0 0 480px
+  margin-right: 40px
+  
+.right 
+  flex: 0 0 500px
+  display: flex
+  flex-wrap: wrap
+  justify-content: start
+.gap 
+  padding-left: 6px
+  padding-right: 6px
+.context 
+  width: 200px
+        
+// h2 
+//   color: #1C2160
+//   font-size: 70px
+//   line-height: 84px
+//   margin-bottom: 0px
+
+p 
+  font-size: 16px
+  margin-bottom: 20px
+
+h4 
+  color: #1C2160
+  font-size: 20px
+  line-height: 28px
+  font-weight: 700
+  margin-top: 0px
+  margin-bottom: 0px
+
+imgtest 
+  width: 50px
+  
+
+
+  
+
