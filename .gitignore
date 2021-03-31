@@ -36,6 +36,10 @@ build/Release
 node_modules/
 jspm_packages/
 
+# Dossie .css et css.map pas nécessaires pcq auto génerés par style.sass
+public/stylesheets/style.css
+public/stylesheets/style.css.map
+
 # Typescript v1 declaration files
 typings/
 
