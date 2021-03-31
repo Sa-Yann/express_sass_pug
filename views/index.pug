@@ -1,7 +1,9 @@
 extends layout
 
 block content
-
+  //- on relie le fichier avec les variables
+  include all_vars.pug 
+  //- npm
   div.grid-container
     div
       ul.subcontainerMenu 
@@ -15,29 +17,32 @@ block content
          
   div.subcontainerMain
     .allArticles
-      mixin monFilmAMwa(titreTemplate)
-        main(role="main")
+      mixin monFilmAMwa(titreTemplate, imageArtcl)
+        main(role="main").artclContainer
           article.artclBorder.artcl
-            .header
+            .headerArtcl
               a(href="#")
                 h2= titreTemplate
+                
               .categorie Drama
-            .main
-              img(src="images/logo-rotten-straberry.png")
+            .mainArtcl
+              //- - var monImage = img
+              //- monImage= imageArtcl
+              //- img(src= imageArtcl, alt="#")
+              img(src= imageArtcl, alt="#")
               .description
                 p Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eaque voluptatem voluptatum qui placeat quo.
                 p Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eaque voluptatem voluptatum qui placeat quo.
                 p Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eaque voluptatem voluptatum qui placeat quo.
-            .footer
+            .footerArtcl
               .realisator Bob
               ul.actors
                 each val in ["Bob", "Patrick", "Sandy"]
                   li= val
               .date 30 mars 2021
-
-      each val in ["Mon premier super film", "Mon deuxième super film", "Mon troisième super film"]
-        +monFilmAMwa(val)
-
+      //- -var infos = [{titreTemplateInfo:"Mon premier super film", imageArtclInfo:"images/amon.jpg"},{titreTemplateInfo:"Mon deuxième super film",imageArtclInfo:"images/viking.jpg"},{titreTemplateInfo: "Mon troisième super film",imageArtclInfo:"images/gunjan.jpg"}]
+      each info in infos
+        +monFilmAMwa(info.titreTemplateInfo,info.imageArtclInfo)
     .sidebar
       div.ecranSearch Rechercher ici 
         div.imageSearch 
@@ -48,4 +53,18 @@ block content
               li 
                 a(href=valCategs.link) #{valCategs.text}
   footer
-    p © 2021 / Max 
+  
+  //- -var cards = [{title:"Section1 Title Here", content:"Commodo dolor adipiscing est un elitum cum diceam est un massa aenean commodo ligula parturient sociis natoque.",img:"https://cognitohq.com/wp-content/themes/cognito/images/home/home-about-business@2x.png"},{title:"Section2 Title Here", content:"Cool article title should be right over here.",img:"https://cognitohq.com/wp-content/themes/cognito/images/home/home-about-screening@2x.png"},{title:"Section3 Title Here", content:"Amazing Technical Specs.",img:"https://cognitohq.com/wp-content/themes/cognito/images/home/home-about-screening@2x.png"},{title:"Section4 Title Here", content:"Some short description about the feature should be here.",img:"https://cognitohq.com/wp-content/themes/cognito/images/home/home-about-business@2x.png"}]
+
+  //- div.left
+  //-   h2 Fantastic Performance
+  //-   p Some short description should be here. It shouldn’t be super long, just two or three rows will be more than enough for quickly present the product.
+  //- div.right
+  //-   each card in cards
+  //-     .gap
+  //-       div.context
+  //-         img(src= card.img)
+  //-         h4= card.title
+  //-         p= card.content
+            
+  p © 2021 / Max 
